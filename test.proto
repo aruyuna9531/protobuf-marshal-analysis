@@ -1,0 +1,39 @@
+syntax = "proto3";
+option go_package ="./test";
+package test;
+
+message Child {
+    sint64 chile = 1;
+}
+
+enum DayOfWeek {
+    MONDAY = 0;
+    TUESDAY = 1;
+    WEDNESDAY = 2;
+    THRUSDAY = 3;
+    FRIDAY = 4;
+    SATURDAY = 5;
+    SUNDAY = 6;
+}
+
+message msg {
+    int32 fint32 = 1;   // 通常32为整型
+    int64 fint64 = 2;   // 通常64位整型
+    uint32 fuint32 = 3; // 无符号32位整型
+    uint64 fuint64 = 4; // 无符号64位整型
+    sint32 fsint32 = 5; // 有符号32位整型
+    sint64 fsint64 = 6; // 无符号64位整型
+    fixed32 ffixed32 = 7; // 定长32位整型
+    fixed64 ffixed64 = 8; // 定长64位整型
+    double fdouble = 9; // 64位浮点型
+    float ffloat = 10; // 32位浮点型
+    bool fbool = 11; // 布尔
+    DayOfWeek fenum = 12; // 枚举型
+    Child fmessage = 13; // 结构体
+    map<uint32, int32> fmap = 14; // map
+    repeated bool frepeat = 15; // 数组
+    string fstring = 16; // 字符串
+    bytes fbytes = 17; // byte数组
+    sfixed32 fsfixed32 = 18; // 定长32位有符号
+    sfixed64 fsfixed64 = 19; // 定长64位有符号
+}
